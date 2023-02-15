@@ -4,13 +4,29 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=>, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap" rel="stylesheet">
+
+    <script src="./script.js"></script>
+    <link rel="stylesheet" type="text/css" href="./Index.css">
+
     <title>Document</title>
 </head>
 <body>
-    <h1 class="header"> Header </h1>
-    <h3 class="title"> Javascript Stopwatch </h3>
+    <h1 class="header"> Hi there! </h1>
+    <h3 class="header"> Javascript Stopwatch </h3>
         <div class="stopwatch">
-
+            <div class="button" onclick="reset()">
+                <div class="letter">RESET</div>
+            </div>
+            <div class="button" onclick="start()">
+                <div class="letter">START</div>
+            </div>
+            <div class="button" onclick="stop()">
+                <div class="letter">STOP</div>
+            </div>
         </div>
 </body>
 </html>
