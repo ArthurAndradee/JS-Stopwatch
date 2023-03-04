@@ -1,18 +1,36 @@
 const body = document.getElementsByClassName("body")
-let mainNumber = document.querySelector(".mainNumber")
+const mainNumber = document.querySelector(".mainNumber")
+const startButton = document.getElementById("button")
+const recordButton = document.getElementById("record")
+const list = document.querySelector("ul")
 
 let [milliseconds,seconds,minutes,hours] = [0,0,0,0];
 let int = null;
 
+var startCalls = 0
+
 function start() {
-    if(int!==null){
+    startCalls++
+
+    if(startCalls % 2 == 0){
         clearInterval(int);
+        startButton.innerHTML="CONTINUE"
+    } else {    
+        int = setInterval(displayTimer,10);
+        startButton.innerHTML="STOP"
     }
-    int = setInterval(displayTimer,10);
 }
 
-function pause() {
-    clearInterval(int);
+function register() {
+    let h = hours < 10 ? "0" + hours : hours;
+    let m = minutes < 10 ? "0" + minutes : minutes;
+    let s = seconds < 10 ? "0" + seconds : seconds;
+    let ms = milliseconds < 10 ? "00" + milliseconds : milliseconds < 100 ? "0" + milliseconds : milliseconds;
+
+    const newRecord = document.createElement("li")
+    newRecord.innerHTML = ` ${h} : ${m} : ${s} : ${ms}`
+
+    list.appendChild(newRecord)
 }
 
 function reset() {

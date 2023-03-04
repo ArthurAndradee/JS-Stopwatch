@@ -19,15 +19,18 @@
     <title>Document</title>
 </head>
     <body>
-        <h1 class="header"> Hi there! </h1>
-        <h3 class="header"> Javascript Stopwatch </h3>
+        <h1 class="header"> Javascript Stopwatch </h1>
             <div class="mainNumber">
                 00 : 00 : 00 : 000
             </div>
-            <div class="stopwatch">
+            <div class="record">
+                <ul id="record">
+                </ul>
+            </div>
+                <div class="stopwatch">
                 <button class="btn btn-outline-light btn-lg px-5 mx-4" onclick="reset()">RESET</button>
-                <button class="btn btn-outline-light btn-lg px-5 mx-4" onclick="start()">START</button>
-                <button class="btn btn-outline-light btn-lg px-5 mx-4" onclick="pause()">STOP</button>
+                <button id="button" class="btn btn-outline-light btn-lg px-5 mx-4" onclick="start()">START</button>
+                <button class="btn btn-outline-light btn-lg px-5 mx-4" onclick="register()">REGISTER</button>
                 </div>
             </div>
     </body>
