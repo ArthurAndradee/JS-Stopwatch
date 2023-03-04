@@ -34,9 +34,13 @@ function register() {
 }
 
 function reset() {
+    startCalls++
+    
     clearInterval(int);
     [milliseconds,seconds,minutes,hours] = [0,0,0,0];
     mainNumber.innerHTML = "00 : 00 : 00 : 000 ";
+
+    startButton.innerHTML="START"
 }
 
 
