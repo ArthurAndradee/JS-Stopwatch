@@ -27,7 +27,7 @@ function register() {
     let s = seconds < 10 ? "0" + seconds : seconds;
     let ms = milliseconds < 10 ? "00" + milliseconds : milliseconds < 100 ? "0" + milliseconds : milliseconds;
 
-    const newRecord = document.createElement("li")
+    let newRecord = document.createElement("li")
     newRecord.innerHTML = ` ${h} : ${m} : ${s} : ${ms}`
 
     list.appendChild(newRecord)
@@ -40,6 +40,9 @@ function reset() {
     [milliseconds,seconds,minutes,hours] = [0,0,0,0];
     mainNumber.innerHTML = "00 : 00 : 00 : 000 ";
 
+    while (list.lastElementChild) {
+        list.removeChild(list.lastElementChild)
+    }
     startButton.innerHTML="START"
 }
 
