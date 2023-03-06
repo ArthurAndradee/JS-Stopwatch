@@ -7,17 +7,17 @@ const list = document.querySelector("ul")
 let [milliseconds,seconds,minutes,hours] = [0,0,0,0];
 let int = null;
 
-var startCalls = 0
+var timeState = 0
 
 function start() {
-    startCalls++
-
-    if(startCalls % 2 == 0){
+    if(timeState == 1){
         clearInterval(int);
         startButton.innerHTML="CONTINUE"
+        timeState = 0
     } else {    
         int = setInterval(displayTimer,10);
         startButton.innerHTML="STOP"
+        timeState = 1
     }
 }
 
@@ -27,23 +27,24 @@ function register() {
     let s = seconds < 10 ? "0" + seconds : seconds;
     let ms = milliseconds < 10 ? "00" + milliseconds : milliseconds < 100 ? "0" + milliseconds : milliseconds;
 
-    let newRecord = document.createElement("li")
+    const newRecord = document.createElement("li")
     newRecord.innerHTML = ` ${h} : ${m} : ${s} : ${ms}`
 
     list.appendChild(newRecord)
 }
 
 function reset() {
-    startCalls++
+    timeState = 0
     
     clearInterval(int);
     [milliseconds,seconds,minutes,hours] = [0,0,0,0];
     mainNumber.innerHTML = "00 : 00 : 00 : 000 ";
 
+    startButton.innerHTML="START"
+
     while (list.lastElementChild) {
         list.removeChild(list.lastElementChild)
     }
-    startButton.innerHTML="START"
 }
 
 
