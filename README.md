@@ -2,4 +2,4 @@
 ------  
 Sinta-se livre para fazer mudanças!    
   
-Agora com contador
+Agora com contador imbutido  
